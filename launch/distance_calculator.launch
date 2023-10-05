@@ -1,0 +1,17 @@
+<launch>
+
+    <node pkg="hw3" type="distance_calculator_node.py" name="distance_calculator_node" output="screen"></node>
+
+    <node pkg="hw3" type="monitor.py" name="monitor"></node>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_detect_obstacle.launch">
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+        <arg name="yaw" value="0.0"/>
+    </include>
+
+    <!-- <include file="$(find turtlebot_rviz_launchers)/launch/view_robot.launch"/> -->
+
+   
+</launch>

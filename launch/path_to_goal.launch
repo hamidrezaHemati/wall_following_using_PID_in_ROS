@@ -1,0 +1,17 @@
+<launch>
+
+    <node pkg="hw3" type="path_to_goal.py" name="path_to_goal" output="screen"></node>
+
+    <node pkg="hw3" type="monitor.py" name="monitor"></node>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_path_to_goal.launch">
+        <arg name="x_pos" value="3.0"/>
+        <arg name="y_pos" value="-1.0"/>
+        <arg name="z_pos" value="0.0"/>
+        <arg name="yaw" value="1.5"/>
+    </include>
+
+    <include file="$(find turtlebot_rviz_launchers)/launch/view_robot.launch"/>
+
+   
+</launch>
